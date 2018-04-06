@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Chat UI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Yeon+Sung" rel="stylesheet">
+    <link rel="stylesheet" href="/chat.css">
+</head>
+
+<body class="chat">
+    <div class="chat-sidebar display-for-desktop">
+        <h3>People</h3>
+        <div class="chat-sidebar__user-search">
+            <i class="fa fa-search"></i>
+            <input type="text">
+        </div>
+        <div id="users">
+			<ol>
+                <li class="user">
+                    <img class="avatar" src="https://avatars0.githubusercontent.com/u/26858253?v=4">
+                    <div class="user__title">
+                        <h3>Vivek kumar</h3>
+                        <span>I was wondering...</span>
+                    </div>
+                </li>
+            </ol>
+		</div>
+    </div>
+    <div class="chat-main">
+        <div class="chat-header">
+            <img class="avatar" src="https://avatars0.githubusercontent.com/u/26858253?v=4">
+            <div class="chat-header__title">
+                <h3>Chat in heritage-talent group</h3>
+                <span>already 1902 messages</span>
+            </div>
+        </div>
+        <ol class="chat-messages" id="messages">
+			<li class="message message--odd">
+                <div class="message__title">
+                    <span>10:10 AM, Today</span>
+                    <h3>Vivek</h3>
+                </div>
+                <div class="message__body">
+                    <p>Hi Vincent, how are you? How is the project coming along?</p>
+                </div>
+            </li>
+            <li class="message message--even">
+                <div class="message__title">
+                    <span>10:14 AM, Today</span>
+                    <h3>Louis Litt</h3>
+                </div>
+                <div class="message__body">
+                    <p>When you're backed against the wall, break the god damn thing down.</p>
+                </div>
+            </li>
+            <li class="message message--odd">
+                <div class="message__title">
+                    <span>10:10 AM, Today</span>
+                    <h3>Vivek</h3>
+                </div>
+                <div class="message__body">
+                    <p>Hi Vincent, how are you? How is the project coming along?</p>
+                </div>
+            </li>
+            <li class="message message--even">
+                <div class="message__title">
+                    <span>10:14 AM, Today</span>
+                    <h3>Louis Litt</h3>
+                </div>
+                <div class="message__body">
+                    <p>When you're backed against the wall, break the god damn thing down.</p>
+                </div>
+            </li>
+		</ol>
+        <div class="chat-footer">
+            <form id="message-form">
+                <input type="text" placeholder="message" name="message" autofocus>
+                <button class="button">Send</button>
+            </form>
+            <button class="button button--secondary" id="send-location">Send location</button>
+        </div>
+    </div>
+
+    <template id="message-template">
+        <li class="message">
+            <div class="message__title">
+                <span>{{createdAt}}</span>
+                <h3>{{from}}</h3>
+            </div>
+            <div class="message__body">
+                <p>{{text}}</p>
+            </div>
+        </li>
+    </template>
+
+    <template id="location-message-template">
+        <li class="message message--odd">
+            <div class="message__title">
+                <span>{{createdAt}}</span>
+                <h3>{{from}}</h3>
+            </div>
+            <div class="message__body">
+                <p>
+                    <a href="{{url}}" target="_blank">My current location</a>
+                </p>
+            </div>
+        </li>
+    </template>
+
+    <template id="user-template">
+        <li class="user">
+            <img class="avatar" src="{{img-url}}">
+            <div class="user__title">
+                <h3>{{name}}</h3>
+                <span>{{last-message}}</span>
+            </div>
+        </li>
+    </template>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/libs/deparam.js"></script>
+    <script src="/js/libs/moment/moment.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>
