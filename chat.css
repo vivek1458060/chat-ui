@@ -5,12 +5,15 @@
     font-size: .95rem;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    line-height: 1.5;
 }
 
 .chat {
     display: flex;
     height: 100vh;
+}
+
+h3 {
+	font-weight: 600;
 }
 
 .chat-sidebar {
@@ -31,7 +34,7 @@
 .chat-header {
     border-bottom: 3px solid white;
     display: flex;
-    padding: 20px 15px;
+    padding: 8px 15px;
     align-items: center;
 }
 
@@ -122,6 +125,8 @@
 .message{
     list-style-type: none;
     padding: 10px 15px;
+	display: flex;
+	flex-direction: column;
 }
 
 .message__title {
@@ -135,38 +140,30 @@
 }
 
 .message--odd {
-    clear: right;
+	align-items: flex-start;
 }
 
 .message--odd .message__body p{
     background: #94C2ED;
 }
 
-.message--even .message__title {
-    float: right
-}
-
 .message--even {
-    float: right;
+	align-items: flex-end;
 }
 
 .message--even .message__body p{
-    background:#86BB71
+    background:#86BB71;
 }
 
 .message__body p {
-    padding: 15px 25px;
+	padding: 5px 15px;
+	font-size: 18px;
     background: #435F7A;
     color: white;
-    border-radius: 50px;
-    display: inline-block;
+    border-radius: 5px;
     font-family: 'Yeon Sung', cursive;
-    font-size: 1.2rem;
-    max-width: 400px;
-}
-
-.chat-header__title h3 {
-    font-size: 18px;
+	margin-bottom: 3px;
+	max-width: 300px;
 }
 
 .chat-header__title span {
@@ -178,9 +175,7 @@
 }
 
 @media (max-width: 768px) {
-    * {
-        font-size: 1rem;
-    }
+	
     .display-for-desktop {
         display:none;
     }
@@ -191,6 +186,11 @@
     .chat-header__title span {
         color: white;
     }
+	.message__body p {
+		font-size: 0.96rem;
+		font-family: 'Lato', sans-serif;
+		line-height: 1.5;
+	}
     .chat-footer {
         flex-direction: column;
     }
