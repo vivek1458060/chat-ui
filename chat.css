@@ -34,8 +34,9 @@ h3 {
 .chat-header {
     border-bottom: 3px solid white;
     display: flex;
+	align-items: center;
     padding: 8px 15px;
-    align-items: center;
+	flex-shrink: 0;
 }
 
 .chat-messages {
