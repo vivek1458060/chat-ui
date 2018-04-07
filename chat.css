@@ -29,6 +29,7 @@ h3 {
     flex-direction: column;
     background: #F2F5F8;
     flex-grow: 1;
+	flex-shrink: 0;
 }
 
 .chat-header {
