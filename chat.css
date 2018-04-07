@@ -9,7 +9,8 @@
 
 .chat {
     display: flex;
-    height: 100vh;
+	max-width: 992px;
+	margin: 0 auto;
 }
 
 h3 {
@@ -22,14 +23,15 @@ h3 {
     color: white;
     padding: 20px;
     overflow-y: scroll;
+	height: 100vh;
 }
 
 .chat-main {
     display: flex;
     flex-direction: column;
     background: #F2F5F8;
-    flex-grow: 1;
-	flex-shrink: 0;
+	flex-grow: 1;
+	height: 100vh;
 }
 
 .chat-header {
@@ -113,7 +115,7 @@ h3 {
 
 .button {
     padding: 10px;
-    background: #2C3E50;
+    background: #265f82;
     color: white;
     border: none;
     outline: none;
