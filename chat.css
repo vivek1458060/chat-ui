@@ -7,6 +7,10 @@
     font-weight: 300;
 }
 
+html, body {
+	height: 100%;
+}
+
 .chat {
     display: flex;
 	max-width: 992px;
@@ -23,7 +27,6 @@ h3 {
     color: white;
     padding: 20px;
     overflow-y: scroll;
-	height: 100vh;
 }
 
 .chat-main {
@@ -31,7 +34,6 @@ h3 {
     flex-direction: column;
     background: #F2F5F8;
 	flex-grow: 1;
-	height: 100vh;
 }
 
 .chat-header {
